@@ -1,5 +1,12 @@
 {
   "name": "hyrax-demo",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^3.0.2",
+    "coffeescript": "1.12.7",
+    "webpacker-react": "^0.3.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.9.4"
+  }
 }
