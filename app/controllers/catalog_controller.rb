@@ -4,6 +4,13 @@ class CatalogController < ApplicationController
 
   # This filter applies the hydra access controls
   before_action :enforce_show_permissions, only: :show
+  before_action :broadcast_live_search
+
+  def broadcast_live_search
+    if params[:q]
+      ActionCable.server.broadcast "live_search", params[:q]
+    end
+  end
 
   def self.uploaded_field
     solr_name('system_create', :stored_sortable, type: :date)
